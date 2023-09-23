@@ -14,6 +14,10 @@ function toalumni() {
   window.location.assign('Alumni.html');
 }
 
+function tohome() {
+  window.location.assign('index.html');
+}
+
 //bot token
 var telegram_bot_id = '6397359832:AAGjEEp8254nENpBelxxbvndltJOcoMu9rM';
 //chat id
