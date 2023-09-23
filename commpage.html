@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Community | StudyBuddy</title>
+    <link rel="shortcut icon" href="notebook.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: rgba(116, 110, 255, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+      .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+        height: 100vh;
+        flex-wrap: wrap;
+      }
+      .cardcontainer {
+        width: 400px;
+        height: 300px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(191, 218, 239, 1);
+        font-family: 'Poppins';
+      }
+      .subjecthead {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+      }
+      .subjectbranch {
+        font-size: 1.15rem;
+        color: grey;
+        font-weight: 600;
+        margin: 0;
+      }
+      .topiccard {
+        width: 90%;
+        height: 100px;
+        border-radius: 20px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: rgb(69, 69, 69);
+      }
+      .datecard {
+        width: 200px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        border-radius: 10px;
+      }
+      .lastdiv {
+        width: 90%;
+        height: 25%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .phonelinkcard,
+      .emaillinkcard {
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 50px;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .phonelinkcard:hover,
+      .emaillinkcard:hover {
+        background-color: rgba(116, 110, 255, 1);
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cardcontainer">
+      <p class="subjecthead">Computer Science</p>
+      <p class="subjectbranch">CSE</p>
+      <p class="topiccard"><b>Topics </b>- Abhishek jain , Loops , Recursion</p>
+      <div class="lastdiv">
+        <p class="datecard">19/02/04</p>
+        <a href="#" class="phonelinkcard">
+          <img src="call.png" alt="" width="30px" />
+        </a>
+        <a href="#" class="emaillinkcard"
+          ><img src="email.png" alt="" width="30px"
+        /></a>
+      </div>
+    </div>
+
+    <div id="card-container">
+      <!-- Cards will be inserted here -->
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

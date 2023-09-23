@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEARN SOMETHING | STUDYBUDDY</title>
+    <link rel="stylesheet" href="style.css" />
+   
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="mainlogo.png" type="image/x-icon" />
+  </head>
+  <body class="formbody">
+    <div class="headermain">
+      <div class="logodiv">
+        <img src="studying.png" alt="Hacksamosa" class="logoimage" />
+        <p class="compname">HackSamosa</p>
+      </div>
+      <div class="linksdiv">
+        <div class="linksdivinside"></div>
+        <div class="links link1">Post Class</div>
+        <div class="links link1">Take Class</div>
+        <div class="links link1">Notes</div>
+        <div class="links link1">Alumni</div>
+      </div>
+    </div>
+
+    <div class="maindiv">
+      <div class="firsthalfpostclass">
+        <img
+          src="takeclassimage.png"
+          alt="Studybuddy"
+          class="firsthalfpostimg"
+        />
+      </div>
+      <div class="secondhalfpostclass">
+        <div class="mainform">
+       <form action="https://sheetdb.io/api/v1/asni13rw18kwv" method="post" id="sheetdb-form" onclick="sender()">
+          <select type="text" class="input1 inputs" placeholder="Your Course" id="maincourse" name = "data[COURSE]">
+            <option value="ComputerScience">Computer Science</option>
+            <option value="Information Technology">INformation Technology</option>
+            <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+          </select>
+          <input type="text" class="input3 inputs" placeholder="Topic" id="TOPIC" name ="data[TOPIC]"></input>
+          <input type="text" class="input2 inputs" placeholder="Subject Interested" id="BRANCH" name ="data[BRANCH]"></input>
+          
+          <input type="date" class="input4 inputs" placeholder="" id="date" name = "data[DATE]"></input>
+          <input type="number" class="input5 inputs" placeholder="Contact Number" id="contactno" name ="data[CONTACT]"></input>
+          <input class="input6 inputs" placeholder="Email Id" id="emailid" name = "data[EMAIL]"></input>
+          <button type="submit" onclick ="sender()" class="button buttonsubmit" >Submit</button>
+        </form>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+
+//bot token
+var telegram_bot_id = '6397359832:AAGjEEp8254nENpBelxxbvndltJOcoMu9rM';
+//chat id
+var chat_id = 1212458291;
+var u_name, email, message;
+var ready = function () {
+  maincourse = document.getElementById('maincourse').value;
+  branch = document.getElementById('branch').value;
+  topic = document.getElementById('topic').value;
+  date = document.getElementById('date').value;
+  contact = document.getElementById('contactno').value;
+  emailid = document.getElementById('emailid').value;
+  message =
+    'Course : ' +
+    maincourse +
+    '\nBranch : ' +
+    branch +
+    '\nTopic : ' +
+    topic +
+    '\nDate : ' +
+    date +
+    '\nContact : ' +
+    contact +
+    '\nEmail : ' +
+    emailid;
+};
+var sender = function () {
+  ready();
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: 'https://api.telegram.org/bot' + telegram_bot_id + '/sendMessage',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'cache-control': 'no-cache',
+    },
+    data: JSON.stringify({
+      chat_id: chat_id,
+      text: message,
+    }),
+  };
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+  document.getElementById('maincourse').value = '';
+  document.getElementById('branch').value = '';
+  document.getElementById('topic').value = '';
+  document.getElementById('date').value = '';
+  document.getElementById('contactno').value = '';
+  document.getElementById('emailid').value = '';
+
+  return false;
+};
+
+
+      var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      // you can put any JS code here
+      alert("Your Request has been Submitted.")
+      window.open('index.html', '_blank');
+
+    });
+  });
+  </script>
+  </body>
+</html>

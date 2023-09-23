@@ -1,0 +1,313 @@
+body{
+    margin: 0;padding: 0;
+    font-family: 'Poppins';
+}
+.headermain{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logodiv{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.logoimage{
+    width: 60px;
+}
+.linksdiv{
+    width: 60%;
+    height: 100%;
+    display: flex;justify-content: flex-end;
+    align-items: center;
+}
+.link1{
+    display: flex;justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 45px;
+    background-color: white;
+    border-radius: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid rgba(116,110,255,1);
+    color: rgb(0, 0, 0);
+    font-weight:600 ;
+}
+.link1:hover{
+    background-color:rgba(116,110,255,1) ;
+    color: white;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+.compname{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.page1{
+    width: 100%;
+    height: 480px;
+    display: flex;justify-content: center;align-items: center;
+}
+.page1inside{
+    width: 90%;
+    height: 440px;
+    background-color: rgba(116,110,255,1);
+    border-radius: 40px;
+    display: flex;justify-content: center;align-items: center;
+}
+.first,.second{
+    width: 50%;
+    height: 100%;
+    display: flex;justify-content: center;align-items: center;
+    flex-direction: column;
+}
+.page1image{
+    width: 500px;
+}
+.headpage1{
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom:10px;padding: 0;
+    text-align: center;
+}
+.page1desc{
+    font-size: 1.5rem;
+    color: rgb(213, 213, 213);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    width: 70%;
+}
+.buttonpage1{
+    width: 80%;
+    display: flex;justify-content: space-around;align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.button{
+    width: 220px;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 3px solid transparent;
+}
+.button:hover{
+    border: 3px solid white;
+    color: white;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+/*page2*/
+.page2{
+    width: 100%;
+    height: 480px;
+    display: flex;justify-content: center;align-items: center;
+}
+.page2inside{
+    width: 90%;
+    border-radius: 40px;
+    height: 440px;
+    display: flex;justify-content: space-between;align-items: center;
+}
+.page2first,.page2second{
+    width: 48.5%;
+    height: 100%;
+    background-color: rgba(245, 144, 95, 1);
+    border-radius: 40px;
+}
+.page2second{
+    background-color: rgba(240, 208, 104, 1);
+}
+.one{
+    width: 100%;
+    height: 50%;
+    border-radius: 40px 40px 0 0;
+    display: flex;
+    justify-content: space-around;align-items: center;
+}
+
+.page2onetext{
+    width: 50%;
+    height: 70%;
+    font-size: 2.5rem;
+    font-weight: 550;
+    color: white;
+
+}
+.page2oneimage{
+    width: 200px;
+}
+.two{
+    height: 50%;
+    display: flex;justify-content:space-around ;align-items: center;
+    text-align: center;
+    flex-direction: column;
+
+}
+.twoone{
+    width: 80%;
+    font-size: 1.2rem;
+    color: rgb(56, 56, 56);
+}
+
+/*take class form*/
+.formbody{
+    background-color: rgba(116, 110, 255, 1);
+    height: 100vh;
+    overflow: hidden;
+}
+.linksclasspost{
+    width: 150px;
+    height:45px;
+    border-radius: 40px;
+    border: 3px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+.maindiv{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.firsthalfpostclass ,.secondhalfpostclass{
+    width: 50%;
+    height: 89%;
+    
+    display: flex;justify-content: center;align-items: center;
+    flex-direction: column;
+}
+.mainform{
+    height: 80%;
+    width: 500px;
+    background-color: aliceblue;
+    border-radius: 40px;
+    transform: translateY(-30px);
+    display: flex;justify-content: center;align-items: center;
+    flex-direction: column;
+}
+.inputs{
+    width: 85%;
+    padding-left: 5%;
+    padding-right: 2%;
+    height: 55px;
+    margin-top: 10px;
+    margin-bottom:10px ;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(232, 232, 232);
+    color: rgba(143, 143, 143, 1);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid grey;
+
+}
+.submitbutton{
+    width: 40%;
+    height: 50px;
+    border: none;
+    background-color: rgba(116, 110, 255, 1);
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.button:hover{
+    cursor: pointer;
+}
+.link1{
+    cursor: pointer;  
+}
+.buttonsubmit{
+    background-color:rgba(116, 110, 255, 1) ;
+    color: white;
+}
+.buttonsubmit:hover{
+    background-color: rgb(63, 60, 158);
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;align-items: center;
+    flex-direction: column;
+}
+
+/*notes page*/
+.notesbanner{
+    width: 100%;
+    height: 400px;
+    display: flex;justify-content: center;align-items: center;
+}
+.bannerinside{
+    width: 90%;
+    height: 360px;
+    background-color:rgba(116, 110, 255, 1) ;
+    border-radius: 40px;
+    display: flex;justify-content: center;align-items: center;
+}
+.notesimage{
+    width: 200px;
+}
+.imagenotes{
+    width: 50%;
+    height: 100%;
+    display: flex;justify-content: flex-start;align-items: center;
+}
+.textimage{
+    font-size: 1.5rem;
+}
+.textnotes{
+    font-size: 3.5rem;
+    color: white;
+    font-weight: 600;
+}
+.notediv{
+    width: 100vw;
+    display: flex;justify-content: center;align-items: center;
+}
+.notedivinside{
+    display: flex;justify-content: center;align-items: center;
+    flex-wrap: wrap;
+}
+.notehead{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(203, 203, 203);
+    margin:10px;
+    border-radius:20px;
+    display: flex;justify-content: center;align-items: center;
+    flex-direction: column;
+    background-color: rgba(191, 218, 239, 1);
+}
+.notehead:hover{
+    background-color: rgba(93, 180, 153, 1);
+    transition: 0.3s;
+    scale: 1.1;
+}
+.namenotes{
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(0, 68, 107);
+}
+.notesinsideimage{
+    width: 80px;
+    transform: translateY(10px);
+}
