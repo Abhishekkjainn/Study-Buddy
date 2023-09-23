@@ -431,3 +431,10 @@ form{
     opacity: 1;
     transform: translate(-50%, -130%);
   }
+  .commpageheading{
+    font-size: 2.5rem;
+    margin-top: 30px;
+    margin-left: 5%;
+    color: white;
+    font-weight: 500;
+  }

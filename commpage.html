@@ -9,17 +9,12 @@
     <style>
       body {
         background-color: rgba(116, 110, 255, 1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        flex-direction: column;
       }
-      .card-container {
+      #card-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 1000px;
+        width: 100vw;
         height: 100vh;
         flex-wrap: wrap;
       }
@@ -33,6 +28,8 @@
         flex-direction: column;
         background-color: rgba(191, 218, 239, 1);
         font-family: 'Poppins';
+        margin-left: 20px;
+        margin-right: 20px;
       }
       .subjecthead {
         font-size: 1.4rem;
@@ -93,7 +90,21 @@
     </style>
   </head>
   <body>
-    <div class="cardcontainer">
+    <div class="headermain">
+      <div class="logodiv">
+        <img src="studying.png" alt="Hacksamosa" class="logoimage" />
+        <p class="compname">HackSamosa</p>
+      </div>
+      <div class="linksdiv">
+        <div class="linksdivinside"></div>
+        <div class="links link1" onclick=" topostclass()">Post Class</div>
+        <div class="links link1" onclick="totakeclass()">Take Class</div>
+        <div class="links link1" onclick="tonotes()">Notes</div>
+        <div class="links link1" onclick="toalumni()">Alumni</div>
+      </div>
+    </div>
+    <div id="array"></div>
+    <!-- <div class="cardcontainer">
       <p class="subjecthead">Computer Science</p>
       <p class="subjectbranch">CSE</p>
       <p class="topiccard"><b>Topics </b>- Abhishek jain , Loops , Recursion</p>
@@ -106,7 +117,8 @@
           ><img src="email.png" alt="" width="30px"
         /></a>
       </div>
-    </div>
+    </div> -->
+    <div class="commpageheading">WELCOME TO STUDY-BUDDY !</div>
 
     <div id="card-container">
       <!-- Cards will be inserted here -->
