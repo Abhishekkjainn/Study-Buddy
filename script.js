@@ -10,6 +10,10 @@ function totakeclass() {
   window.location.assign('commpage.html');
 }
 
+function toalumni() {
+  window.location.assign('Alumni.html');
+}
+
 //bot token
 var telegram_bot_id = '6397359832:AAGjEEp8254nENpBelxxbvndltJOcoMu9rM';
 //chat id
