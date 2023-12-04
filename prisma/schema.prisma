@@ -6,12 +6,12 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "mongodb"
     url      = env("DATABASE_URL")
 }
 
 model Post {
-    id        Int      @id @default(autoincrement())
+    id        Int      @id @map("_id")
     name      String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
