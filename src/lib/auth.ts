@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import type { NextAuthOptions } from "next-auth";
-import NextAuth from "next-auth/next";
+// import NextAuth from "next-auth/next";
 // import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 // import Providers from "next-auth/providers/google";
@@ -19,7 +19,7 @@ type Account = {
 };
 
 // Define authentication options using NextAuthOptions interface
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
 	// Customize authentication pages
 	pages: {
 		signIn: "/login", // Redirect users to "/login" when signing in
@@ -60,6 +60,3 @@ const authOptions: NextAuthOptions = {
 		// CredentialsProvider({}), // Include a Credentials provider (username/password)
 	],
 };
-
-const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
