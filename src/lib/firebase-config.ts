@@ -17,4 +17,8 @@ const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
+provider.setCustomParameters({
+  hd: "vitstudent.ac.in",
+});
+
 export { auth, provider };
