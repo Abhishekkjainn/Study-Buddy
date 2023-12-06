@@ -2,8 +2,12 @@
 import type { NextAuthOptions } from "next-auth";
 // import NextAuth from "next-auth/next";
 // import GitHubProvider from "next-auth/providers/github";
-import GoogleProvider from "next-auth/providers/google";
 // import Providers from "next-auth/providers";
+import GoogleProvider from "next-auth/providers/google";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 // import type { NextApiRequest, NextApiResponse } from "next";
 
 // type Handler = (req: NextApiRequest, res: NextApiResponse) => Promise<void>;
@@ -50,6 +54,7 @@ export const authOptions: NextAuthOptions = {
 		},
 	},
 
+	adapter: PrismaAdapter(prisma),
 	// Configure authentication providers
 	providers: [
 		GoogleProvider({
@@ -57,7 +62,7 @@ export const authOptions: NextAuthOptions = {
 			clientId: process.env.GOOGLE_ID!,
 			clientSecret: process.env.GOOGLE_SECRET!,
 			authorization:
-				"https://accounts.google.com/o/oauth2/auth?response_type=code&hd=vitstudent.ac.in",
+				"https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code&hd=vitstudent.ac.in",
 		}),
 		// CredentialsProvider({}), // Include a Credentials provider (username/password)
 	],
