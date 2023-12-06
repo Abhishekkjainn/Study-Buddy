@@ -3,7 +3,7 @@ import type { NextAuthOptions } from "next-auth";
 // import NextAuth from "next-auth/next";
 // import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-// import Providers from "next-auth/providers/google";
+// import Providers from "next-auth/providers";
 // import type { NextApiRequest, NextApiResponse } from "next";
 
 // type Handler = (req: NextApiRequest, res: NextApiResponse) => Promise<void>;
@@ -56,6 +56,8 @@ export const authOptions: NextAuthOptions = {
 			// Configure Google authentication provider with environment variables
 			clientId: process.env.GOOGLE_ID!,
 			clientSecret: process.env.GOOGLE_SECRET!,
+			authorization:
+				"https://accounts.google.com/o/oauth2/auth?response_type=code&hd=vitstudent.ac.in",
 		}),
 		// CredentialsProvider({}), // Include a Credentials provider (username/password)
 	],
