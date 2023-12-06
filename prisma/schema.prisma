@@ -11,49 +11,52 @@ datasource db {
 }
 
 model User {
-  id              String      @id @default(auto()) @map("_id") @db.ObjectId
-  email           String      @unique
-  name            String?      
-  image           String?      
-  createdAt       DateTime    @default(now())
-  emailVerified   DateTime?   @map("verifiedAt")
-  sessions        Session[]
-  account         Account[]
-  @@map("users")
+    id            String    @id @default(auto()) @map("_id") @db.ObjectId
+    email         String    @unique
+    name          String?
+    image         String?
+    createdAt     DateTime  @default(now())
+    emailVerified DateTime? @map("verifiedAt")
+    sessions      Session[]
+    account       Account[]
+
+    @@map("users")
 }
 
 model Account {
-  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
-  userId             String  @db.ObjectId
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  
-  access_token       String?  
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  
-  session_state      String?
-  user               User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+    id                String  @id @default(auto()) @map("_id") @db.ObjectId
+    userId            String  @db.ObjectId
+    type              String
+    provider          String
+    providerAccountId String
+    refresh_token     String?
+    access_token      String?
+    expires_at        Int?
+    token_type        String?
+    scope             String?
+    id_token          String?
+    session_state     String?
+    user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([provider, providerAccountId])
+    @@unique([provider, providerAccountId])
 }
- 
+
 model Session {
-  id              String      @id @default(auto()) @map("_id") @db.ObjectId
-  sessionToken    String      @unique
-  userId          String      @db.ObjectId
-  expires         DateTime    @map("expiresAt")
-  user            User        @relation(fields: [userId], references: [id])
-  @@map("sessions")
+    id           String   @id @default(auto()) @map("_id") @db.ObjectId
+    sessionToken String   @unique
+    userId       String   @db.ObjectId
+    expires      DateTime @map("expiresAt")
+    user         User     @relation(fields: [userId], references: [id])
+
+    @@map("sessions")
 }
- 
+
 model VerificationToken {
-  id              String      @id @default(auto()) @map("_id") @db.ObjectId
-  identifier      String
-  token           String      @unique
-  expires         DateTime    @map("expiresAt")
-  @@unique([identifier, token])
-  @@map("verification_tokens")
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    identifier String
+    token      String   @unique
+    expires    DateTime @map("expiresAt")
+
+    @@unique([identifier, token])
+    @@map("verification_tokens")
 }
