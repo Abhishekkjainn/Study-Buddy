@@ -1,13 +1,16 @@
-"use client";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../../lib/auth";
 
-// import { getServerSession } from "next-auth/next"
-import { authOptions } from "~/lib/auth";
-import { useSession } from "next-auth/react";
+export default async function Profile() {
+	const session = await getServerSession(authOptions);
 
-export default function Protected() {
-	const { data: session } = useSession();
-
-	// if (typeof window === "undefined") return null;
+	fetch("http://localhost:3000/api/profile", {})
+		.then((response) => {
+			console.log(response);
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 
 	if (session) {
 		return (
@@ -17,21 +20,10 @@ export default function Protected() {
 			</div>
 		);
 	}
+
 	return (
 		<div>
 			<p>Access Denied</p>
 		</div>
 	);
 }
-
-// export async function getServerSideProps(context) {
-// 	return {
-// 	  props: {
-// 		session: await getServerSession(
-// 		  context.req,
-// 		  context.res,
-// 		  authOptions
-// 		),
-// 	  },
-// 	}
-//   }
