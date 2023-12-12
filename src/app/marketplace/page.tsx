@@ -1,8 +1,7 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../../lib/auth";
-import ProfileForm from "./ProfileForm";
 
-export default async function Profile() {
+export default async function MarketPlace() {
 	const session = await getServerSession(authOptions);
 	if (!session) {
 		return (
@@ -15,11 +14,8 @@ export default async function Profile() {
 	return (
 		<div>
 			<div>
-				<h1>Protected Page</h1>
+				<h1>Marketplace Page</h1>
 				<p>You can view this page because you are signed in.</p>
-			</div>
-			<div>
-				<ProfileForm />
 			</div>
 		</div>
 	);
