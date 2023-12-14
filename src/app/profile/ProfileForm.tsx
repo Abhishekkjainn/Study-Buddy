@@ -75,8 +75,6 @@ export default function ProfileForm() {
 						type="tel"
 						pattern="[0-9]{10}"
 						required
-						minLength={10}
-						maxLength={10}
 					/>
 				</div>
 
