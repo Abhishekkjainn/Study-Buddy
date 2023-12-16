@@ -6,7 +6,8 @@ export default async function Profile() {
 	const session = await getServerSession(authOptions);
 	if (!session) {
 		return (
-			<div>
+			<div className="min-h-screen min-w-full flex justify-center items-center">
+				
 				<p>Access Denied</p>
 			</div>
 		);
@@ -15,8 +16,8 @@ export default async function Profile() {
 	return (
 		<div>
 			<div>
-				<h1>Protected Page</h1>
-				<p>You can view this page because you are signed in.</p>
+				{/* <h1>Protected Page</h1>
+				<p>You can view this page because you are signed in.</p> */}
 			</div>
 			<div>
 				<ProfileForm />
