@@ -42,7 +42,7 @@ To start using StudyBuddy:
 
 To run StudyBuddy locally:
 
-1. Clone the repository: `git clone https://github.com/your-username/studybuddy.git`
+1. Clone the repository: `git clone https://github.com/abhishekkjainn/studybuddy.git`
 2. Navigate to the project directory: `cd studybuddy`
 3. Run the index.html File 
 
